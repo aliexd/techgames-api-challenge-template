@@ -24,6 +24,12 @@ app.get( "/status", ( req, res ) => {
     });
 } );
 
+app.post( "/articles", ( req, res ) => {
+    res.send({
+     status: "Up"
+    });
+} );
+
 app.use((req: Request, res: Response) => {
      res.status(500).send({
      status: 500,
