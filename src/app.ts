@@ -18,11 +18,16 @@ if (port == "") {
     process.exit(1);
 }
 
+app.get( "/status", ( req, res ) => {
+    res.send({
+     status: "Up"
+    });
+} );
+
 app.use((req: Request, res: Response) => {
-    res.status(500).send({
-        status: 500,
-        message: "Not Implemented"
+     res.status(500).send({
+     status: 500,
+     message: "Not Implemented"
     });
 });
-
 export { app, port }
